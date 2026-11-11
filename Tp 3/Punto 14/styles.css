@@ -1,0 +1,69 @@
+/* 1. Definición de variables globales en :root (Tema Claro por defecto) */
+:root {
+    --color-fondo: #f4f7f6;
+    --color-texto: #333333;
+    --color-primario: #3498db;
+    --color-tarjeta: #ffffff;
+    --espaciado-general: 20px;
+    --borde-redondeado: 10px;
+}
+
+/* Reseteo general */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; }
+
+/* Ocultamos el checkbox real */
+#toggle-tema { display: none; }
+
+/* 2. Simulación de "Modo Oscuro" */
+/* Si el checkbox está marcado (:checked), redefinimos las variables en el contenedor */
+#toggle-tema:checked ~ .contenedor-app {
+    --color-fondo: #121212;
+    --color-texto: #e0e0e0;
+    --color-primario: #9b59b6; /* Cambiamos a violeta en modo oscuro */
+    --color-tarjeta: #1e1e1e;
+}
+
+/* --- APLICACIÓN DE VARIABLES --- */
+
+/* Aplicamos variable 1 (background-color) y variable 2 (color) */
+.contenedor-app {
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    min-height: 100vh;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+header {
+    /* Aplicamos variable 3 (padding) y variable 1 (background-color) reutilizada */
+    padding: var(--espaciado-general);
+    text-align: center;
+    border-bottom: 2px solid var(--color-primario);
+}
+
+.tarjeta {
+    /* Reutilizamos variables para la tarjeta */
+    background-color: var(--color-tarjeta);
+    padding: var(--espaciado-general);
+    margin: var(--espaciado-general) auto;
+    max-width: 600px;
+    
+    /* Aplicamos variable 4 (border-radius) */
+    border-radius: var(--borde-redondeado);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.4s ease;
+}
+
+.btn-tema, .btn-accion {
+    display: inline-block;
+    cursor: pointer;
+    border: none;
+    
+    /* Aplicamos variable 5 (background-color del botón primario) */
+    background-color: var(--color-primario);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: var(--borde-redondeado);
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}

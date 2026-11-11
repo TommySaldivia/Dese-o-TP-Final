@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 20 - Landing Page Integradora</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAVBAR FIJA -->
+    <header class="navbar">
+        <div class="logo">DevStudio</div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN HERO -->
+        <section id="hero" class="hero">
+            <div class="hero-contenido">
+                <h1>Construimos el futuro web</h1>
+                <p>Soluciones digitales a medida con las últimas tecnologías.</p>
+                <a href="#contacto" class="btn-primario">Comienza hoy</a>
+            </div>
+        </section>
+
+        <!-- SECCIÓN SERVICIOS (GRID) -->
+        <section id="servicios" class="seccion-servicios">
+            <div class="contenedor">
+                <h2>Nuestros Servicios</h2>
+                <div class="grid-servicios">
+                    <div class="card-servicio">
+                        <h3>Desarrollo Web</h3>
+                        <p>Sitios web responsivos, rápidos y optimizados para SEO.</p>
+                    </div>
+                    <div class="card-servicio">
+                        <h3>Diseño UX/UI</h3>
+                        <p>Interfaces intuitivas que mejoran la experiencia del usuario.</p>
+                    </div>
+                    <div class="card-servicio">
+                        <h3>Consultoría IT</h3>
+                        <p>Asesoramiento técnico para potenciar tu infraestructura.</p>
+                    </div>
+                    <div class="card-servicio">
+                        <h3>Marketing Digital</h3>
+                        <p>Estrategias integrales para hacer crecer tu marca online.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN TESTIMONIOS (CARRUSEL SCROLL-SNAP) -->
+        <section id="testimonios" class="seccion-testimonios">
+            <div class="contenedor">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <div class="carrusel-testimonios">
+                    <div class="testimonio">
+                        <p>"El mejor equipo con el que hemos trabajado. Excelente calidad."</p>
+                        <h4>- María García, CEO de TechSolutions</h4>
+                    </div>
+                    <div class="testimonio">
+                        <p>"Transformaron nuestra visión en una plataforma increíble."</p>
+                        <h4>- Juan Pérez, Fundador de StartUpX</h4>
+                    </div>
+                    <div class="testimonio">
+                        <p>"Atención al detalle y tiempos de entrega perfectos."</p>
+                        <h4>- Laura Gómez, Directora de Marketing</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN CONTACTO (FORMULARIO) -->
+        <section id="contacto" class="seccion-contacto">
+            <div class="contenedor">
+                <h2>Contáctanos</h2>
+                <form class="formulario-contacto" action="#" method="POST">
+                    <div class="grupo-input">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="grupo-input">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea id="mensaje" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-primario">Enviar Mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2026 DevStudio - Licenciatura en Sistemas de Información. Todos los derechos reservados.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+/* --- ESTILOS DEL TOOLTIP --- */
+
+.contenedor-tooltip {
+    /* Requisito: position relative en el padre para ser la referencia del absolute */
+    position: relative;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    cursor: help;
+}
+
+.tooltip {
+    /* Requisito: position absolute para flotar respecto a su padre */
+    position: absolute;
+    bottom: 130%; /* Lo posiciona arriba del texto */
+    left: 50%;
+    transform: translateX(-50%); /* Lo centra perfectamente */
+    
+    background-color: #333;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    
+    /* Requisito: z-index para asegurar que flote sobre otros elementos */
+    z-index: 10;
+    
+    /* Efecto oculto por defecto */
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Mostrar el tooltip al hacer hover en el contenedor */
+.contenedor-tooltip:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- ESTILOS DEL BOTÓN VOLVER ARRIBA --- */
+
+.btn-volver-arriba {
+    /* Requisito: position fixed en la esquina inferior derecha */
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    
+    background-color: #e63946;
+    color: white;
+    padding: 12px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    
+    /* Requisito: z-index alto para que nunca quede tapado por el texto al scrollear */
+    z-index: 100;
+    transition: background-color 0.3s;
+}
+
+.btn-volver-arriba:hover {
+    background-color: #c1121f;
+}
+

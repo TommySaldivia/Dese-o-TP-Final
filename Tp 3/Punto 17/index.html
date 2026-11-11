@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17 - Menú Hamburguesa CSS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">MiLogo</div>
+        
+        <!-- Requisito: Checkbox oculto para controlar el estado del menú -->
+        <input type="checkbox" id="menu-toggle" class="menu-toggle">
+        
+        <!-- Requisito: Label asociado al checkbox (Accesibilidad básica) -->
+        <label for="menu-toggle" class="menu-icono">&#9776;</label>
+        
+        <!-- Menú de navegación -->
+        <nav class="menu">
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Servicios</a></li>
+                <li><a href="#">Nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="contenido">
+        <h1>Diseño sin JavaScript</h1>
+        <p>Achica la ventana del navegador (menos de 768px) para ver el ícono de hamburguesa y haz clic en él para desplegar el menú.</p>
+    </main>
+</body>
+</html>

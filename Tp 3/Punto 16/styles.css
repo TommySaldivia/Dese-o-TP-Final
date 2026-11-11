@@ -1,0 +1,60 @@
+/* Reseteo y centrado */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =========================================
+   DEFINICIÓN DE LA ANIMACIÓN CON @keyframes
+   ========================================= */
+@keyframes fadeSlideUp {
+    0% {
+        opacity: 0; /* Totalmente transparente */
+        transform: translateY(60px); /* Desplazado 60px hacia abajo */
+    }
+    100% {
+        opacity: 1; /* Totalmente visible */
+        transform: translateY(0); /* En su posición original */
+    }
+}
+
+/* =========================================
+   APLICACIÓN DE LA ANIMACIÓN
+   ========================================= */
+.tarjeta-animada {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 400px;
+    text-align: center;
+    
+    /* Requisitos del ejercicio: */
+    animation-name: fadeSlideUp;          /* Vinculamos el keyframe */
+    animation-duration: 1.2s;             /* Control de duration */
+    animation-timing-function: ease-out;  /* Control de timing-function (desacelera al final) */
+    animation-iteration-count: 1;         /* Control de iteration-count (se ejecuta 1 sola vez) */
+    
+    /* Propiedad extra para mantener el estado final (100%) al terminar la animación */
+    animation-fill-mode: forwards; 
+}
+
+.tarjeta-animada h2 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.tarjeta-animada p {
+    color: #555;
+    line-height: 1.6;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14 - Variables CSS y Modo Oscuro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Checkbox oculto para controlar el tema -->
+    <input type="checkbox" id="toggle-tema">
+    
+    <!-- Contenedor general que reaccionará al checkbox -->
+    <div class="contenedor-app">
+        
+        <header>
+            <h1>Mi Sitio con Variables CSS</h1>
+            <!-- Botón (label) que acciona el checkbox oculto -->
+            <label for="toggle-tema" class="btn-tema">Alternar Modo Oscuro</label>
+        </header>
+
+        <main>
+            <div class="tarjeta">
+                <h2>Variables en Acción</h2>
+                <p>Este diseño utiliza variables CSS para definir colores, espaciados y bordes. Al tocar el botón superior, cambiamos el valor de las variables y todo el diseño se actualiza automáticamente.</p>
+                <button class="btn-accion">Botón de prueba</button>
+            </div>
+        </main>
+        
+    </div>
+</body>
+</html>

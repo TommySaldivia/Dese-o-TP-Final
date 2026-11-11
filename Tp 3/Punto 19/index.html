@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 19 - Formulario Multi-step</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <h1>Registro de Usuario</h1>
+        
+        <form action="#" method="POST" class="formulario-multi">
+            
+            <!-- Requisito: Truco de radio buttons ocultos para gestionar los pasos -->
+            <input type="radio" name="paso" id="paso1" class="radio-oculto" checked>
+            <input type="radio" name="paso" id="paso2" class="radio-oculto">
+            
+            <!-- =========================================
+                 PASO 1: Datos Personales
+                 ========================================= -->
+            <section class="seccion-paso" id="seccion1">
+                <h2>Paso 1: Datos Personales</h2>
+                
+                <div class="grupo-input">
+                    <label for="nombre">Nombre completo:</label>
+                    <!-- Usamos 'required' para activar las pseudo-clases de validación -->
+                    <input type="text" id="nombre" required placeholder="Ej. Juan Pérez">
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="edad">Edad (mínimo 18):</label>
+                    <input type="number" id="edad" min="18" required placeholder="Mayor de edad">
+                </div>
+                
+                <!-- Este 'label' actúa como botón para avanzar al paso 2 -->
+                <label for="paso2" class="btn-navegacion btn-siguiente">Siguiente Paso &rarr;</label>
+            </section>
+
+            <!-- =========================================
+                 PASO 2: Datos de Cuenta
+                 ========================================= -->
+            <section class="seccion-paso" id="seccion2">
+                <h2>Paso 2: Datos de Cuenta</h2>
+                
+                <div class="grupo-input">
+                    <label for="email">Correo electrónico:</label>
+                    <input type="email" id="email" required placeholder="correo@ejemplo.com">
+                </div>
+                
+                <div class="grupo-input">
+                    <label for="password">Contraseña (Mín. 6 caracteres):</label>
+                    <input type="password" id="password" required minlength="6">
+                </div>
+                
+                <div class="botones-paso-2">
+                    <!-- Este 'label' actúa como botón para volver al paso 1 -->
+                    <label for="paso1" class="btn-navegacion btn-volver">&larr; Volver</label>
+                    <button type="submit" class="btn-enviar">Finalizar Registro</button>
+                </div>
+            </section>
+
+        </form>
+    </main>
+</body>
+</html>

@@ -1,0 +1,154 @@
+@layer tokens, base, layout, components, utilities;
+
+@layer tokens {
+    :root {
+        /* Colores */
+        --color-espresso: #30261C;
+        --color-maroon: #2A0000;
+        --color-sand: #E2D9C8;
+        --color-sand-20: rgba(226, 217, 200, 0.2);
+        --color-sand-40: rgba(226, 217, 200, 0.4);
+        --color-bg: #F1F0EE;
+        --color-muted: #544A3E;
+        --color-border-soft: rgba(48, 38, 28, 0.1);
+        --color-white: #FFFFFF;
+
+        /* Espacios y radios */
+        --container: 1444px;
+        --radius-pill: 100px;
+        --radius-card: 18px;
+        --radius-img: 12px;
+        --radius-btn: 8px;
+    }
+}
+
+@layer base {
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+        font-family: sans-serif;
+        background-color: var(--color-bg);
+        color: var(--color-espresso);
+    }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { max-width: 100%; display: block; }
+    
+    /* Accesibilidad: Quitar animaciones si el usuario lo prefiere */
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            transition: none !important;
+            scroll-behavior: auto !important;
+        }
+    }
+}
+
+@layer layout {
+    .container {
+        max-width: var(--container);
+        margin: 0 auto;
+        padding: 0 16px;
+    }
+    .products, .promo, .testimonials, .newsletter {
+        padding: 56px 0;
+        text-align: center;
+    }
+}
+
+@layer components {
+    /* Header */
+    .header {
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        padding-top: 55px;
+        z-index: 10;
+        color: var(--color-white);
+    }
+    .header .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .nav {
+        display: flex;
+        gap: 24px;
+        display: none; /* Oculto en mobile, simple */
+    }
+    @media(min-width: 1024px) { .nav { display: flex; } }
+    
+    /* Hero */
+    .hero {
+        background: #333; /* Color de fondo simple en vez de imagen */
+        color: var(--color-white);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+    .hero__content { max-width: 557px; margin-left: 0; }
+    @media(min-width: 1024px) { .hero__content { margin-left: 238px; } }
+
+    /* Categorias */
+    .categories { background-color: var(--color-sand); padding: 40px 0; }
+    .categories__list { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
+
+    /* Carrusel CSS (Sin JS) */
+    .carousel {
+        display: flex;
+        gap: 16px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 16px;
+        scrollbar-width: none;
+    }
+    .product-card, .testimonial-card { scroll-snap-align: start; min-width: 300px; text-align: left; }
+
+    /* Cards */
+    .product-card {
+        background: var(--color-sand-20);
+        border: 1.5px solid var(--color-sand);
+        border-radius: var(--radius-card);
+        padding: 16px;
+    }
+    .product-card__img-wrapper { position: relative; }
+    .product-card__img-wrapper img { border-radius: var(--radius-img); width: 100%; }
+    .fav-btn {
+        position: absolute;
+        top: 18px; right: 18px;
+        cursor: pointer;
+    }
+    .product-card__footer { display: flex; justify-content: space-between; align-items: center; margin-top: 16px;}
+    
+    /* Buttons */
+    .btn {
+        padding: 16px 40px;
+        border-radius: var(--radius-pill);
+        border: none;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    .btn--primary { background: var(--color-white); color: var(--color-espresso); }
+    .btn--secondary { background: var(--color-maroon); color: var(--color-white); border-radius: var(--radius-btn); padding: 10px 26px; }
+    .btn--dark { background: var(--color-espresso); color: var(--color-bg); }
+
+    /* Footer */
+    .footer {
+        background-color: var(--color-espresso);
+        color: var(--color-white);
+        padding: 56px 0;
+    }
+    .footer__grid { display: grid; gap: 32px; grid-template-columns: 1fr; }
+    @media(min-width: 768px) { .footer__grid { grid-template-columns: repeat(4, 1fr); } }
+}
+
+@layer utilities {
+    .sr-only {
+        position: absolute; width: 1px; height: 1px;
+        padding: 0; margin: -1px; overflow: hidden;
+        clip: rect(0, 0, 0, 0); border: 0;
+    }
+    .skip-link { position: absolute; top: -40px; left: 0; background: #000; color: #fff; padding: 8px; z-index: 100; }
+    .skip-link:focus { top: 0; }
+    :focus-visible { outline: 2px solid var(--color-espresso); outline-offset: 3px; }
+    
+    /* Lógica simple del checkbox de favoritos sin JS */
+    input[type="checkbox"]:checked + .fav-btn { color: red; content: "❤️"; }
+}

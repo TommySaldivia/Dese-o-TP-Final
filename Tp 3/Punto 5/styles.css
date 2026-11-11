@@ -1,0 +1,12 @@
+/* Selector de etiqueta para todo el cuerpo del documento */
+body {
+    background-color: #f0f4f8; /* Cambia el color de fondo */
+    color: #333333;           /* Cambia el color del texto general */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Cambia la tipografía */
+}
+
+/* Selector de etiqueta para el encabezado principal */
+h1 {
+    color: #0056b3;           /* Cambia el color de texto específico del h1 */
+    font-size: 48px;          /* Cambia el tamaño de fuente del h1 */
+}
